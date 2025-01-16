@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
+// Tema 1 - Cadastro das Cartas - Novato
 
 //Teste Ícaro Teles
 
