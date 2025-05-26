@@ -6,44 +6,92 @@
 //Teste Ícaro Teles
 
 int main() {
-    // Definição de varáveis do código e atributos da cidade:
+    // Definição de varáveis dos códigos e atributos das cidades:
 
-    char estado, cidade[15];
-    int  pontos, codigo, populacao, area, pib;
+    char estado1, estado2, cidade1[20], cidade2[20], codigo1, codigo2;
+    int  pontos1, pontos2, populacao1, populacao2;
+    float area1, area2, pib1, pib2;
 
-    // Área de Cadastro das Cartas, diálogos de interação e scan de respostas:
+    // CADASTRO CARTA 1: diálogos de interação e scan de respostas:
 
-    printf("Olá! Tudo bem? Você está na página de cadastro de cartas. Aqui faremos algumas perguntas para que você preencha com dados.\n");
+    printf("Olá! Tudo bem? Você está na página de cadastro da sua primeira Carta. Aqui faremos algumas perguntas para que você preencha com dados.\n");
+
     printf("Diga o código do Estado da sua carta (letras entre A e H).\n");
-    scanf("%c", &estado);
+    scanf(" %c", &estado1);
 
     printf("Ótimo, agora indique o número da cidade (entre 1 a 4)\n");
-    scanf("%d", &codigo);
+    scanf(" %c", &codigo1);
 
     printf("Show! E qual o nome da cidade?\n");
-    scanf("%s", &cidade);
+    scanf("%s", cidade1);
 
     printf("Certinho, agora pedirei algumas informações sobre a cidade.\n");
+
     printf("Qual a população total dela?\n");
-    scanf("%d", &populacao);
+    scanf(" %d", &populacao1);
 
     printf("E qual a área total dela em m²?\n");
-    scanf("%d", &area);
+    scanf("%f", &area1);
 
-    printf("Certo, estamos quase terminando!\nMe diz agora, em milhões, o PIB dessa cidade.\n");
-    scanf("%d", &pib);
+    printf("Certo, estamos quase terminando!\nMe diz agora o PIB dessa cidade.\n");
+    scanf("%f", &pib1);
 
     printf("E, por último, quantos pontos turísticos ela tem?\n");
-    scanf("%d", &pontos);
+    scanf("%d", &pontos1);
 
     // Exibição dos Dados das Cartas:
 
-    printf("Acabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
-    printf("Sua carta cadastrada é a de código: %c%d \nNome da cidade: %s \nPopulação: %d habitantes \nÁrea: %dm² \nPib: %d Milhões \nPontos Turísticos: %d \n", estado,codigo,cidade,populacao,area,pib,pontos);
+    printf("\nAcabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
+    printf("Sua carta cadastrada é a de código: %c%c\n", estado1, codigo1);
+    printf("Nome da cidade: %s\n", cidade1);
+    printf("População: %d habitantes\n", populacao1);
+    printf("Área: %.f m²\n", area1);  
+    printf("PIB: R$%.f \n", pib1); 
+    printf("Pontos Turísticos: %d\n", pontos1);
+    
+    //Saudação Final de confirmação:
+
+    printf("\nCarta cadastrada com sucesso!\n");
+
+    //CADASTRO CARTA 2: diálogos de interação e scan de respostas:
+
+    printf("Agora vamos cadastrar nossa segunda carta!\n");
+
+    printf("Diga o código do Estado da Carta 2 (letras entre A e H).\n");
+    scanf(" %c", &estado2);
+
+    printf("Ótimo, agora indique o número da cidade (entre 1 a 4)\n");
+    scanf(" %c", &codigo2);
+
+    printf("Show! E qual o nome da cidade?\n");
+    scanf("%s", cidade2);
+
+    printf("Qual a população total dela?\n");
+    scanf(" %d", &populacao2);
+
+    printf("E qual a área total dela em m²?\n");
+    scanf("%f", &area2);
+
+    printf("Certo, estamos quase terminando!\nMe diz agora o PIB dessa cidade.\n");
+    scanf("%f", &pib2);
+
+    printf("E, por último, quantos pontos turísticos ela tem?\n");
+    scanf("%d", &pontos2);
+
+    // Exibição dos Dados das Cartas:
+
+    printf("\nAcabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
+    printf("Sua carta cadastrada é a de código: %c%c\n", estado2, codigo2);
+    printf("Nome da cidade: %s\n", cidade2);
+    printf("População: %d habitantes\n", populacao2);
+    printf("Área: %.f m²\n", area2);  
+    printf("PIB: R$%.f \n", pib2); 
+    printf("Pontos Turísticos: %d\n", pontos2);
     
     //Saudação Final de confirmação:
 
     printf("\nCarta cadastrada com sucesso!\nEspero que todas as informações estejam corretas!\n");
+
 
     return 0;
 }
