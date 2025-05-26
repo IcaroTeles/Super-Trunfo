@@ -8,7 +8,7 @@
 int main() {
     // Definição de varáveis dos códigos e atributos das cidades:
 
-    char estado1, estado2, cidade1[20], cidade2[20], codigo1, codigo2;
+    char estado1, estado2, cidade1[20], cidade2[20], codigo1[2], codigo2[2];
     int  pontos1, pontos2, populacao1, populacao2;
     float area1, area2, pib1, pib2;
 
@@ -19,8 +19,8 @@ int main() {
     printf("Diga o código do Estado da sua carta (letras entre A e H).\n");
     scanf(" %c", &estado1);
 
-    printf("Ótimo, agora indique o número da cidade (entre 1 a 4)\n");
-    scanf(" %c", &codigo1);
+    printf("Ótimo, agora indique o número da cidade (entre 01 a 04)\n");
+    scanf(" %s", codigo1);
 
     printf("Show! E qual o nome da cidade?\n");
     scanf("%s", cidade1);
@@ -42,7 +42,7 @@ int main() {
     // Exibição dos Dados das Cartas:
 
     printf("\nAcabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
-    printf("Sua carta cadastrada é a de código: %c%c\n", estado1, codigo1);
+    printf("Sua carta cadastrada é a de código: %c%s\n", estado1, codigo1);
     printf("Nome da cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
     printf("Área: %.f m²\n", area1);  
@@ -61,10 +61,10 @@ int main() {
     scanf(" %c", &estado2);
 
     printf("Ótimo, agora indique o número da cidade (entre 1 a 4)\n");
-    scanf(" %c", &codigo2);
+    scanf(" %s", codigo2);
 
     printf("Show! E qual o nome da cidade?\n");
-    scanf("%s", cidade2);
+    scanf(" %s", cidade2);
 
     printf("Qual a população total dela?\n");
     scanf(" %d", &populacao2);
@@ -81,7 +81,7 @@ int main() {
     // Exibição dos Dados das Cartas:
 
     printf("\nAcabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
-    printf("Sua carta cadastrada é a de código: %c%c\n", estado2, codigo2);
+    printf("Sua carta cadastrada é a de código: %c%s\n", estado2, codigo2);
     printf("Nome da cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
     printf("Área: %.f m²\n", area2);  
