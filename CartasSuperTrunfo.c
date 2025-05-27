@@ -10,11 +10,11 @@ int main() {
 
     char estado1, estado2, cidade1[20], cidade2[20], codigo1[2], codigo2[2];
     int  pontos1, pontos2, populacao1, populacao2;
-    float area1, area2, pib1, pib2, densidade1, densidade2, percapta1, percapta2;
+    float area1, area2, pib1, pib2, densidade1, densidade2, percapta1, percapta2, super1, super2, resultado;
 
     // CADASTRO CARTA 1: diálogos de interação e scan de respostas:
 
-    printf("Olá! Tudo bem? Você está na página de cadastro da sua primeira Carta. Aqui faremos algumas perguntas para que você preencha com dados.\n");
+    printf("Olá! Tudo bem? Você está na página de cadastro da sua CARTA 1. Aqui faremos algumas perguntas para que você preencha com dados.\n");
 
     printf("Diga o código do Estado da sua carta (letras entre A e H).\n");
     scanf(" %c", &estado1);
@@ -46,8 +46,8 @@ int main() {
 
     // Exibição dos Dados das Cartas:
 
-    printf("\nAcabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
-    printf("Sua carta cadastrada é a de código: %c%s\n", estado1, codigo1);
+    printf("\nAcabamos o nosso cadastro! Essa é a sua CARTA 1:\n");
+    printf("Sua carta cadastrada é a de código: %c-%s\n", estado1, codigo1);
     printf("Nome da cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
     printf("Área: %.2f m²\n", area1);
@@ -62,9 +62,9 @@ int main() {
 
     //CADASTRO CARTA 2: diálogos de interação e scan de respostas:
 
-    printf("Agora vamos cadastrar nossa segunda carta!\n");
+    printf("Agora vamos cadastrar sua CARTA 2!\n");
 
-    printf("Diga o código do Estado da Carta 2 (letras entre A e H).\n");
+    printf("Diga o código do Estado da CARTA 2 (letras entre A e H).\n");
     scanf(" %c", &estado2);
 
     printf("Ótimo, agora indique o número da cidade (entre 1 a 4)\n");
@@ -92,8 +92,8 @@ int main() {
 
     // Exibição dos Dados das Cartas:
 
-    printf("\nAcabamos o nosso cadastro! Agora vou colocar todas as infos aqui embaixo:\n");
-    printf("Sua carta cadastrada é a de código: %c%s\n", estado2, codigo2);
+    printf("\nAcabamos o nosso cadastro! Essa é a sua CARTA 2:\n");
+    printf("Sua carta cadastrada é a de código: %c-%s\n", estado2, codigo2);
     printf("Nome da cidade: %s\n", cidade2);
     printf("População: %d habitantes\n", populacao2);
     printf("Área: %.2f m²\n", area2);
@@ -106,6 +106,20 @@ int main() {
 
     printf("\nCarta cadastrada com sucesso!\nEspero que todas as informações estejam corretas!\n");
 
+    // CALCULO VS DE CADA CARTA
 
+    super1 = populacao1 + area1 + (1/densidade1) + pib1 + percapta1 + pontos1;
+    super2 = populacao2 + area2 + (1/densidade2) + pib2 + percapta2 + pontos2;
+
+    printf ("Faremos agora o duelo entre as Cartas! se o número que aparecer foi 1, a campeã é CARTA 1 \n");
+    printf ("Se a o número 0 aparecer, a vencedora é a CARTA 2." );
+    printf("\nRESULTADO:\n");
+    printf("População:%d \n", populacao1 > populacao2);
+    printf("Área: %d \n", area1 > area2);
+    printf("Densidade Demográfica:%d \n", (1/densidade1) > (1/densidade2) );  
+    printf("PIB:%d \n", pib1 > pib2);
+    printf("PIB per Capta:%d \n", percapta1 > percapta2);  
+    printf("Pontos Turísticos: %d\n", pontos1 > pontos2);
+    printf("Super Poder:%d \n", super1 > super2);
     return 0;
 }
