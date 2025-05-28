@@ -298,7 +298,7 @@ int main() {
         if (densidade1 > densidade2) {
         printf("\nDensidade da cidade %s: %.2f pessoas/m²\n", cidade1, densidade1);
         printf("Densidade da cidade %s: %.2f pessoas/m²\n",cidade2, densidade2);
-        printf ("A vencedora é a carta 2 - %s!\n", cidade1);
+        printf ("A vencedora é a carta 2 - %s!\n", cidade2);
     } else if (1/densidade1 == 1/densidade2) {
         printf("\nDensidade da cidade %s: %.2f pessoas/m²\n", cidade1, densidade1);
         printf("Densidade da cidade %s: %.2f pessoas/m²\n", cidade2, densidade2);
@@ -306,7 +306,7 @@ int main() {
     } else {
         printf("\nDensidade da cidade %s: %.2f pessoas/m²\n", cidade1, densidade1);
         printf("Densidade da cidade %s: %.2f pessoas/m²\n", cidade2, densidade2);
-        printf ("A vencedora é a carta 1 - %s!\n", cidade2);
+        printf ("A vencedora é a carta 1 - %s!\n", cidade1);
     }
         break;
     
