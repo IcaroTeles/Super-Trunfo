@@ -1,17 +1,13 @@
 #include <stdio.h>
-//Teste Ícaro Teles
-
-// Desafio Super Trunfo - Países
-// Cadastro das Cartas 
 
 int main() {
-    // Definição de varáveis:
+    // ========== Definição de varáveis:
 
     char estado1, estado2, cidade1[30], cidade2[30], codigo1[4], codigo2[4];
     int  pontos1, pontos2, populacao1, populacao2;
     float area1, area2, pib1, pib2, densidade1, densidade2, percapta1, percapta2, super1, super2, resultado;
 
-    // CADASTRO CARTA 1: diálogos de interação e scan de respostas:
+    // ========== CADASTRO CARTA 1: diálogos de interação e scan de respostas:
 
     printf("Olá! Tudo bem? Você está na página de cadastro da sua CARTA 1. Aqui faremos algumas perguntas para que você preencha com dados.\n");
 
@@ -38,12 +34,12 @@ int main() {
     printf("E, por último, quantos pontos turísticos ela tem?\n");
     scanf("%d", &pontos1);
 
-    //CALCULO DE DENSIDADE E PER CAPTA
+    //========== CALCULO DE DENSIDADE E PER CAPTA
 
     densidade1 = (float)populacao1 / area1;
-    percapta1= (float) pib1 / populacao1;
+    percapta1 = (float) pib1 / populacao1;
 
-    // Exibição dos Dados das Cartas:
+    //==========  Exibição dos Dados das Cartas:
 
     printf("\nAcabamos o nosso cadastro! Essa é a sua CARTA 1:\n");
     printf("Sua carta cadastrada é a de código: %c%s\n", estado1, codigo1);
@@ -55,11 +51,11 @@ int main() {
     printf("PIB per Capta: R$%.2f \n", percapta1); 
     printf("Pontos Turísticos: %d\n", pontos1);
     
-    //Saudação Final de confirmação:
+    //========== Saudação Final de confirmação:
 
     printf("\nCarta cadastrada com sucesso!\n");
 
-    //CADASTRO CARTA 2: diálogos de interação e scan de respostas:
+    //========== CADASTRO CARTA 2: diálogos de interação e scan de respostas:
 
     printf("Agora vamos cadastrar sua CARTA 2!\n");
 
@@ -84,12 +80,12 @@ int main() {
     printf("E, por último, quantos pontos turísticos ela tem?\n");
     scanf("%d", &pontos2);
 
-    //CALCULO DE DENSIDADE E PER CAPTA
+    //========== CALCULO DE DENSIDADE E PER CAPTA
 
     densidade2 = (float) populacao2 / area2;
     percapta2 = (float) pib2 / populacao2;
 
-    // Exibição dos Dados das Cartas:
+    //==========  Exibição dos Dados das Cartas:
 
     printf("\nAcabamos o nosso cadastro! Essa é a sua CARTA 2:\n");
     printf("Sua carta cadastrada é a de código: %c%s\n", estado2, codigo2);
@@ -101,14 +97,16 @@ int main() {
     printf("PIB per Capta: R$%.2f \n", percapta2);  
     printf("Pontos Turísticos: %d\n", pontos2);
     
-    //Saudação Final de confirmação:
+    //========== Saudação Final de confirmação:
 
     printf("\nCarta cadastrada com sucesso!\nEspero que todas as informações estejam corretas!\n");
 
-    // CALCULO SUPER PODER DE CADA CARTA
+    //==========  CALCULO SUPER PODER DE CADA CARTA
 
      super1 = populacao1 + area1 + densidade1 + pib1 + percapta1 + pontos1;
      super2 = populacao2 + area2 + densidade2 + pib2 + percapta2 + pontos2;
+
+    #pragma region VERSÕES ANTERIORES COMENTADAS
 
     // VERSÃO DESAFIO 1 COMPARAÇÃO DE CARTAS - INATIVADA PARA IMPLEMENTAÇÃO DO DESAFIO 2 (IF -ELSE)
 
@@ -123,11 +121,11 @@ int main() {
     printf("PIB per Capta:%d \n", percapta1 > percapta2);  
     printf("Pontos Turísticos: %d\n", pontos1 > pontos2);
     printf("Super Poder:%d \n", super1 > super2);
-    */
+    
 
     //IMPLEMENTAÇÃO DE IF-ELSE NA COMPARAÇÃO DE CARTAS - DESATIVADA PARA IMPLEMENTAÇÃO DE MENU INTERATIVO
 
-    /*
+    
     // COMPARAÇÃO POPULAÇÃO
     printf ("\nPOPULAÇÃO:\n");
     if (populacao1 > populacao2) {
@@ -217,10 +215,10 @@ int main() {
         printf("Super Poder da cidade %s: %.2f \n", cidade2, super2);
         printf ("A vencedora é a carta 2 - %s!\n", cidade2);
     }
-    */
+    
 
     // INICIANDO O MENU INTERATIVO DE COMPARAÇÃO
-    /*
+    
     int opcao;
     printf ("Selecione qual atributo você deseja comparar!\n");
     printf ("1 - Quero saber o nome das cidades de cada carta.\n");
@@ -321,11 +319,13 @@ int main() {
     }    
     */
 
+    #pragma endregion
+
     printf ("\nFaremos agora o duelo entre as Cartas!\n");
 
-    // IMPLEMENTAÇÃO DA COMPARAÇÃO DE DOIS ATRIBUTOS
+    //==========  IMPLEMENTAÇÃO DA COMPARAÇÃO DE DOIS ATRIBUTOS
 
-    // MENU PRIMEIRO ATRIBUTO
+    //==========  MENU PRIMEIRO ATRIBUTO
 
     int opcao1, opcao2, resultado1, resultado2;
 
@@ -337,6 +337,8 @@ int main() {
     printf ("5- DENSIDADE DEMOGRÁFICA!\n");
     printf ("Escolha sua opção: ");
     scanf ("%d", &opcao1);
+
+    //==========  SWITCH MENU PRIMEIRO ATRIBUTO
 
     switch (opcao1){
     case 1:
@@ -378,15 +380,16 @@ int main() {
         printf ("Opção Inválida!");
         break;
     }
-    // INDICAÇÃO DE VENCEDOR ATRIBUTO 1
+
+    //==========  INDICAÇÃO DE VENCEDOR ATRIBUTO 1
+
     if (resultado1 == 1){
         printf ("A vencedora do atributo 1 é a carta 1 - %s!\n", cidade1);
     } else {
        printf ("A vencedora do atributo 1 é a carta 2 - %s!\n", cidade2); 
     }
     
-
-    // MENU DO SEGUNDO ATRIBUTO
+    //==========  MENU DO SEGUNDO ATRIBUTO
 
     printf ("\nSelecione o SEGUNDO atributo você deseja comparar!\n");
     printf ("1- POPULAÇÃO!\n");
@@ -396,6 +399,8 @@ int main() {
     printf ("5- DENSIDADE DEMOGRÁFICA!\n");
     printf ("Escolha sua opção: ");
     scanf ("%d", &opcao2);
+
+    //========== SWITCH MENU SEGUNDO ATRIBUTO
 
     if (opcao1 == opcao2) {
         printf("Você escolheu o mesmo atributo! PRESTE ATENÇÃO DA PRÓXIMA VEZ!");
@@ -442,14 +447,15 @@ int main() {
     }
     }
 
-    // INDICAÇÃO DE VENCEDOR ATRIBUTO 2
+    //==========  INDICAÇÃO DE VENCEDOR ATRIBUTO 2
+
     if (resultado2 == 1){
         printf ("A vencedora do atributo 2 é a carta 1 - %s!\n", cidade1);
     } else {
        printf ("A vencedora do atributo 2 é a carta 2 - %s!\n", cidade2); 
     }
 
-    // CÁCULO E DEFINIÇÃO DO RESULTADO
+    //==========  CÁCULO E DEFINIÇÃO DO RESULTADO
 
     if (resultado1 && resultado2){
         printf("\n### A GRANDE VENCEDORA foi a carta 1! - %s! ###\n", cidade1);
@@ -458,9 +464,6 @@ int main() {
     } else {
         printf ("\n### A GRANDE VENCEDORA foi a carta 2! - %s! ###\n", cidade2);
     }
-
-
-
 
     return 0;
 }
