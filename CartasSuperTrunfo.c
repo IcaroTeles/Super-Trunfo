@@ -4,7 +4,7 @@ int main() {
     // ========== Definição de varáveis:
 
     char estado1, estado2, cidade1[30], cidade2[30], codigo1[4], codigo2[4];
-    int  pontos1, pontos2, populacao1, populacao2;
+    int  pontos1, pontos2, populacao1, populacao2, novamente;
     float area1, area2, pib1, pib2, densidade1, densidade2, percapta1, percapta2, super1, super2, resultado;
 
     // ========== CADASTRO CARTA 1: diálogos de interação e scan de respostas:
@@ -326,7 +326,9 @@ int main() {
     //==========  IMPLEMENTAÇÃO DA COMPARAÇÃO DE DOIS ATRIBUTOS
 
     //==========  MENU PRIMEIRO ATRIBUTO
-
+    //========== IMPLEMENTAÇÃO DO-WHILE PARA LOOP DE JOGO
+    
+    do {
     int opcao1, opcao2, resultado1, resultado2;
 
     printf ("\nSelecione qual o PRIMEIRO atributo você deseja comparar!\n");
@@ -343,41 +345,41 @@ int main() {
     switch (opcao1){
     case 1:
         resultado1 = populacao1 > populacao2 ? 1 : 0;
-        printf("Você escolheu como primeiro atributo POPULAÇÃO!\n");
+        printf("\nVocê escolheu como primeiro atributo POPULAÇÃO!\n");
         printf("População da cidade %s : %d habitantes\n", cidade1, populacao1);
         printf("População da cidade %s : %d habitantes\n", cidade2, populacao2);
         break;
     
     case 2:
         resultado1 = area1 > area2 ? 1 : 0;
-        printf("Você escolheu como primeiro atributo ÁREA!\n");
+        printf("\nVocê escolheu como primeiro atributo ÁREA!\n");
         printf("Área da cidade %s: %.2f m²\n", cidade1, area1);
         printf("Área da cidade %s: %.2f m²\n", cidade2, area2);
         break;
 
     case 3:
         resultado1 = pib1 > pib2 ? 1 : 0;
-        printf("Você escolheu como primeiro atributo PIB!\n");
+        printf("\nVocê escolheu como primeiro atributo PIB!\n");
         printf("Pib da cidade %s:R$ %.2f \n", cidade1, pib1);
         printf("Pib da cidade %s:R$ %.2f \n", cidade2, pib2);
         break;
 
     case 4:
         resultado1 = pontos1 > pontos2 ? 1 : 0;
-        printf("Você escolheu como primeiro atributo PONTOS TURÍSTICOS!\n");
+        printf("\nVocê escolheu como primeiro atributo PONTOS TURÍSTICOS!\n");
         printf("Pontos Turísticos da cidade %s: %d \n", cidade1, pontos1);
         printf("Pontos Turísticos da cidade %s: %d \n", cidade2, pontos2);
         break;
 
     case 5:
         resultado1 = densidade1 < densidade2 ? 1 : 0;
-        printf("Você escolheu como primeiro atributo DENSIDADE DEMOGRÁFICA!\n");
+        printf("\nVocê escolheu como primeiro atributo DENSIDADE DEMOGRÁFICA!\n");
         printf("Densidade da cidade %s: %.2f pessoas/m²\n", cidade1, densidade1);
         printf("Densidade da cidade %s: %.2f pessoas/m²\n", cidade2, densidade2);
         break;
 
     default:
-        printf ("Opção Inválida!");
+        printf ("\nOpção Inválida!");
         break;
     }
 
@@ -464,6 +466,18 @@ int main() {
     } else {
         printf ("\n### A GRANDE VENCEDORA foi a carta 2! - %s! ###\n", cidade2);
     }
+
+    // ========== MENU DE REPETIR JOGO
+    
+    printf("\nGostaria de jogar novamente?\n");
+    printf("1 - Sim\n");
+    printf("2 - Não\n");
+    printf ("Escolha sua opção: ");
+    scanf ("%d", &novamente);
+
+} while ( novamente == 1);
+
+printf(" ### Obrigado por jogar! ###");
 
     return 0;
 }
