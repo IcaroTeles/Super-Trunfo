@@ -394,12 +394,11 @@ int main() {
     //==========  MENU DO SEGUNDO ATRIBUTO
 
     printf ("\nSelecione o SEGUNDO atributo você deseja comparar!\n");
-    printf ("1- POPULAÇÃO!\n");
-    printf ("2- ÁREA!\n");
-    printf ("3- PIB!!\n");
-    printf ("4- PONTOS TURÍSTICOS!\n");
-    printf ("5- DENSIDADE DEMOGRÁFICA!\n");
-    printf ("Escolha sua opção: ");
+    if (opcao1 != 1) printf("1 - POPULAÇÃO!\n");
+    if (opcao1 != 2) printf("2 - ÁREA!\n");
+    if (opcao1 != 3) printf("3 - PIB!\n");
+    if (opcao1 != 4) printf("4 - PONTOS TURÍSTICOS!\n");
+    if (opcao1 != 5) printf("5 - DENSIDADE DEMOGRÁFICA!\n");
     scanf ("%d", &opcao2);
 
     //========== SWITCH MENU SEGUNDO ATRIBUTO
